@@ -10,8 +10,8 @@ export default function App() {
         NativeWind is wired through the Expo Router entry point.
       </Text>
       <StatusBar />
-      <Link href="/profile" style={{ color: "blue" }}>
-        Go to Profile
+      <Link href="/home" style={{ color: "blue" }}>
+        Go to Home
       </Link>
     </View>
   );
