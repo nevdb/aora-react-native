@@ -1,18 +1,44 @@
-import { StatusBar } from "react-native";
-import { Text, View } from "react-native";
-import { Link } from "expo-router";
+import { Image, ScrollView, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { StatusBar } from "expo-status-bar";
+import CustomButton from "../components/CustomButton";
+import images from "../constants/images";
 
 export default function App() {
   return (
-    <View className="flex-1 items-center justify-center gap-3 bg-white px-6">
-      <Text className="text-3xl font-bold text-sky-600">Aora!</Text>
-      <Text className="text-center text-base text-slate-600">
-        NativeWind is wired through the Expo Router entry point.
-      </Text>
-      <StatusBar />
-      <Link href="/home" style={{ color: "blue" }}>
-        Go to Home
-      </Link>
-    </View>
+    <SafeAreaView className="bg-primary h-full">
+      <ScrollView contentContainerStyle={{ height: "100%" }}>
+        <View className="w-full justify-center items-center h-full px-4">
+          <Image
+            source={images.logo}
+            className="w-auto h-[54px]"
+            resizeMode="contain"
+          />
+
+          <Image
+            source={images.cards}
+            className="max-w-[180px] w-full h-[100px]"
+            resizeMode="contain"
+          />
+
+          <View className="relative mt-5">
+            <Text className="text-3xl text-white font-bold text-center">
+              Discover Endless Possibilities with{" "}
+              <Text className="text-secondary-200">Aora</Text>
+            </Text>
+          </View>
+          <Text className="text-sm font-regular text-gray-100 mt-7 text-center">
+            Where creativity meets innovation: embark on a journey of limitless
+            exploration with Aora
+          </Text>
+          <CustomButton
+            title="Continue with Email"
+            handlePress={() => {}}
+            containerStyles="w-full mt-7"
+          />
+        </View>
+      </ScrollView>
+      <StatusBar style="light" />
+    </SafeAreaView>
   );
 }
